@@ -3,9 +3,10 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'callscript-ui',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
+    podModulePrefix: 'callscript-ui/pods',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
