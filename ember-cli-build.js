@@ -4,15 +4,12 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    'ember-bootstrap': {
-      'importBootstrapCSS': false
-    },
-    'ember-cli-bootstrap-sassy': {
-      'glyphicons': false,
-      'js': false
-    }
-
     // Add options here
+    sassOptions: {
+      includePaths: [
+        'bower_components/materialize/sass'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

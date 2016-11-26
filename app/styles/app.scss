@@ -3,7 +3,11 @@ $font-family: Futura, 'Trebuchet MS', apple-system, BlinkMacSystemFont, "Segoe U
 body {
   font-family: $font-family;
 }
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
 
 @import 'oil-pastels';
 
 @import "pod-styles";
+// Materialize styles
+@import "materialize";

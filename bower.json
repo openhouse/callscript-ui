@@ -3,6 +3,9 @@
   "dependencies": {
     "ember": "~2.9.1",
     "ember-cli-shims": "0.1.3",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "materialize": "0.97.7",
+    "hammer.js": "2.0.6",
+    "hammer-time": "1.0.0"
   }
 }
