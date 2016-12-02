@@ -32,6 +32,11 @@
       {{c.link-to 'Senator Murkowski (D - AK)' 'place' (query-params selected="stef")}}
       {{c.link-to 'Senator Sullivan (R - AK)' 'place' (query-params selected="tom")}}
       --}}
+      {{#c.item}}
+        {{fa-icon "check" fixedWidth=true class="green-text text-darken-2"}}
+        Rep. Young <span class="right blue-text text-lighten-2">D - AK02</span>
+      {{/c.item}}
+
       {{#c.item class="active blue"}}
         <span class="white-text" style="visibility: hidden;">
           {{fa-icon "square-o" fixedWidth=true}}
@@ -46,10 +51,6 @@
         Sen. Sullivan <span class="right red-text text-lighten-2">R - AK</span>
       {{/c.item}}
 
-      {{#c.item}}
-        {{fa-icon "check" fixedWidth=true}}
-        Rep. Young <span class="right blue-text text-lighten-2">D - AK02</span>
-      {{/c.item}}
 
     {{/md-collection}}
 
