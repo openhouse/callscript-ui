@@ -1,0 +1,57 @@
+$font-family: Futura, 'Trebuchet MS', apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$plain-font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+body {
+  font-family: $font-family;
+}
+.plain-font{
+  font-family: $plain-font-family;
+}
+
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+@import 'oil-pastels';
+
+@import "pod-styles";
+// Materialize styles
+@import "materialize";
+
+@media #{$small-and-down} {
+  .left--sm {
+    left: 0.5rem !important;
+    padding: 0 !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    float: left !important;
+  }
+}
+.main-nav {
+  .last-button a {
+    padding-right: 0;
+  }
+}
+
+.cause-nav {
+  .right {
+    .btn {
+      padding-right: 0;
+    }
+  }
+  .left {
+    .btn {
+      padding-left: 0;
+    }
+  }
+
+}
+.to-call {
+  padding-top: $sidenav-font-size;
+  .collection .collection-item {
+    padding-left: 6px;
+  }
+}
+
+.call-number {
+  padding: $sidenav-font-size 0;
+}
