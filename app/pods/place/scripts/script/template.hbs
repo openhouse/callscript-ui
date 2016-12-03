@@ -1,0 +1,28 @@
+<div style="clear: both;" class="cause-nav">
+  {{#link-to 'place' class="left valign"}}
+    {{#md-btn class="white btn-flat"}}
+      {{fa-icon "chevron-left"}}
+    {{/md-btn}}
+  {{/link-to}}
+  {{#link-to 'place' class="right valign"}}
+    {{#md-btn class="white btn-flat"}}
+      {{fa-icon "chevron-right"}}
+    {{/md-btn}}
+  {{/link-to}}
+  <h4 class="center-align">Tell Reps #NoBannon</h4>
+</div>
+
+{{outlet}}
+
+<div>
+  <h6 class="grey-text">Share this script</h6>
+  <div class="center-align">
+    {{#md-btn class="blue"}}
+      {{fa-icon "envelope" fixedWidth=true}}
+    {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
+      {{fa-icon "facebook" fixedWidth=true}}
+    {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
+      {{fa-icon "twitter" fixedWidth=true}}
+    {{/md-btn}}
+  </div>
+</div>

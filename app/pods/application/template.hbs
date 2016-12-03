@@ -1,4 +1,3 @@
-
 {{#md-nav class='black main-nav' as |n|}}
   <div>
     {{n.title 'Call Script' 'place' classNames='left--sm'}}
@@ -12,92 +11,5 @@
   <div style="clear: both;">
   </div>
 {{/md-nav}}
-{{#md-nav class='white compact-nav black-text' as |n|}}
-  <span class="grey-text">for</span>
-  <span class="black-text">11205</span>
-  <span class="right">
-    Update
-    {{fa-icon "map-marker" class="black-text"}}
-  </span>
-{{/md-nav}}
-
-<div class="container">
-
-
-  <div class="heading-nav">
-    <h6 class="left grey-text">The Cause</h6>
-    <span class="right">{{#link-to 'place' class="black-text"}}All{{/link-to}}</span>
-  </div>
-  <div style="clear: both;" class="cause-nav">
-    {{#link-to 'place' class="left valign"}}
-      {{#md-btn class="white btn-flat"}}
-        {{fa-icon "chevron-left"}}
-      {{/md-btn}}
-    {{/link-to}}
-    {{#link-to 'place' class="right valign"}}
-      {{#md-btn class="white btn-flat"}}
-        {{fa-icon "chevron-right"}}
-      {{/md-btn}}
-    {{/link-to}}
-    <h4 class="center-align  " >Tell Reps #NoBannon</h4>
-
-
-  </div>
-  <div class="to-call">
-    <h6 class="grey-text">People to call</h6>
-    {{#md-collection as |c|}}
-      {{!--
-      {{c.link-to 'Senator Murkowski (D - AK)' 'place' (query-params selected="stef")}}
-      {{c.link-to 'Senator Sullivan (R - AK)' 'place' (query-params selected="tom")}}
-      --}}
-      {{#c.item}}
-        {{fa-icon "check" fixedWidth=true class="green-text text-lighten-2"}}
-        Rep. Young <span class="right blue-text text-lighten-2">D - AK02</span>
-      {{/c.item}}
-
-      {{#c.item class="active blue"}}
-        <span class="white-text" style="visibility: hidden;">
-          {{fa-icon "square-o" fixedWidth=true}}
-        </span>
-        Sen. Murkowski <span class="right white-text ">D - AK</span>
-      {{/c.item}}
-
-      {{#c.item}}
-        <span class="grey-text" style="visibility: hidden;">
-          {{fa-icon "square-o" fixedWidth=true}}
-        </span>
-        Sen. Sullivan <span class="right red-text text-lighten-2">R - AK</span>
-      {{/c.item}}
-
-
-    {{/md-collection}}
-
-  </div>
-  <h4 class="center-align green-text call-number">(212) 688-6262</h4>
-  <p class="flow-text plain-font">
-    My name is ---- ---- and I'm a constituent calling to thank <b>Senator Murkowski</b> for condemning Stephen Bannon's racism. I ask that the <b>Senator</b> continue to pressure the Trump transition team and refuse to work with them if they appoint racists. <b>Senator Murkowski</b> needs to continue to protect American values.
-  </p>
-  <div class="center-align">
-    {{md-btn label='I Called' class="green"}} {{md-btn label='Skip' class="red"}}
-  </div>
-  <br>
-
-  <div>
-    <h6 class="grey-text">Share this script</h6>
-    <div class="center-align">
-      {{#md-btn class="blue"}}
-        {{fa-icon "envelope" fixedWidth=true}}
-      {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
-        {{fa-icon "facebook" fixedWidth=true}}
-      {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
-        {{fa-icon "twitter" fixedWidth=true}}
-      {{/md-btn}}
-    </div>
-  </div>
-</div>
-<br>
-
-
-
 
 {{outlet}}
