@@ -9,8 +9,15 @@ const AppRouter = Router.extend({
 });
 
 AppRouter.map(function() {
-  this.route('place', { path: '/' });
-
+  this.route('place', { path: '/' }, function() {
+    this.route('scripts', { path: '/' }, function() {
+      this.route('script', { path: '/' }, function() {
+        this.route('calls', { path: '/' }, function() {
+          this.route('call', { path: '/' });
+        });
+      });
+    });
+  });
 });
 
 export default AppRouter;
