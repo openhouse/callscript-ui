@@ -1,15 +1,233 @@
-{{#md-nav class='black main-nav' as |n|}}
-  <div>
-    {{n.title 'Call Script' 'place' classNames='left--sm'}}
-    {{#n.menu class="right" as |m|}}
-      {{!--
-      {{m.link-to '11205 update' 'place' (query-params a="3") classNames='last-button'}}
-      --}}
-      {{m.link-to 'About' 'place' (query-params a="3") classNames='last-button'}}
-    {{/n.menu}}
-  </div>
-  <div style="clear: both;">
-  </div>
-{{/md-nav}}
+{{#md-sidenav params=(hash menuWidth=300) classNames="fixed" as |sn|}}
+  <li class="logo">
+    <a href="http://callnyc.org/" class="logo-container brand-logo">
+      <img src="assets/call-script-w20-1-114.png" class="front-page-logo"/>
+    </a>
+  </li>
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+    Health Care
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+    Immigration
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "close" class="red-text" size="lg" fixedWidth=true}}
+    Reproductive Rights
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+    Civil Liberties / First Amendment
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "ellipsis-h" class="pastel-text pastel-gray" size="lg" fixedWidth=true}}
+    Marriage Equality
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Police Brutality / Criminal Justice
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Refugees
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Gun Violence Prevention
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Climate Changes
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Tell reps #NoBannon
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Take Rep. Paul Ryan's ACA Survey
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Call House Oversight Committee
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Dakota Access Pipeline Protestors Injured
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Conflict of Interest Investigation &amp; Russian Influence
+  {{/sn.link-to}}
+  {{#sn.link-to 'place'
+    (query-params a="1")
+    }}
+    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+    Support Katherine Clark's bill
+  {{/sn.link-to}}
 
-{{outlet}}
+
+
+
+{{/md-sidenav}}
+<main class="main-content">
+  <div id="sidenav-container"></div>
+
+  {{#md-nav class='black main-nav' as |n|}}
+    <div>
+      {{#n.title 'place' classNames='doc-nav left--sm'}}
+        Call Script
+      {{/n.title}}
+      <a data-activates={{n.sidenavId}} class="button-collapse hide-on-med-and-up">
+        {{!-- <i class="material-icons">menu</i>--}}
+        {{fa-icon "bars" size="lg"}}
+
+      </a>
+
+      {{#n.menu class="right" as |m|}}
+        {{!--
+        {{m.link-to '11205 update' 'place' (query-params a="3") classNames='last-button'}}
+        --}}
+        {{m.link-to 'About' 'place' (query-params a="3") classNames='last-button'}}
+      {{/n.menu}}
+    </div>
+    <div style="clear: both;">
+    </div>
+    {{!--
+
+  --}}
+    {{#n.sidenav params=(hash menuWidth=240) classNames="pop-out-nav" as |sn| }}
+      <li class="logo pop">
+        <a href="http://callnyc.org/" class="logo-container brand-logo">
+          <img src="assets/call-script-w20-1-114.png" class="front-page-logo"/>
+        </a>
+      </li>
+
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+        Health Care
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+        Immigration
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "close" class="red-text" size="lg" fixedWidth=true}}
+        Reproductive Rights
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+        Civil Liberties / First Amendment
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "ellipsis-h" class="pastel-text pastel-gray" size="lg" fixedWidth=true}}
+        Marriage Equality
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Police Brutality / Criminal Justice
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Refugees
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Gun Violence Prevention
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Climate Changes
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Tell reps #NoBannon
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Take Rep. Paul Ryan's ACA Survey
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Call House Oversight Committee
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Dakota Access Pipeline Protestors Injured
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Conflict of Interest Investigation &amp; Russian Influence
+      {{/sn.link-to}}
+      {{#sn.link-to 'place'
+        (query-params a="1")
+        }}
+        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+        Support Katherine Clark's bill
+      {{/sn.link-to}}
+
+    {{/n.sidenav}}
+
+
+  {{/md-nav}}
+
+
+  {{outlet}}
+</main>

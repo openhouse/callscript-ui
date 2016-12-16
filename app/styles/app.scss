@@ -99,3 +99,85 @@ nav i.fa {
   height: 36px;
   clear: both;
 }
+
+.main-content {
+  padding-left: 300px;
+  @media #{$medium-and-down} {
+    padding-left: 240px;
+  }
+  @media #{$small-and-down} {
+    padding-left: 0;
+  }
+}
+
+
+/*
+*/
+
+ul.side-nav.fixed li.logo, li.logo {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    a {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+}
+.pop-out-nav {
+  .logo {
+    height: 32px;
+  }
+    .brand-logo {
+        margin-left: 0;
+    }
+}
+ul.side-nav.fixed li {
+    line-height: 44px;
+}
+.logo-container {
+    height: 57px;
+    margin-bottom: 32px;
+}
+.front-page-logo {
+    display: inline-block;
+    height: 100%;
+    pointer-events: none;
+}
+
+.truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-nav {
+  a {
+    @extend .truncate;
+  }
+  @media #{$medium-and-down} {
+    width: 240px;
+    li > a {
+      i, [class^="mdi-"], [class*="mdi-"], i.material-icons {
+        margin-right: 16px !important;
+      }
+    }
+  }
+}
+
+.side-nav.fixed {
+  @media only screen and (max-width: 992px) {
+    transform: translateX(0);
+  }
+
+  @media #{$small-and-down} {
+    transform: translateX(-105%);
+  }
+}
+
+nav .brand-logo {
+  @media #{$small-and-down} {
+    margin-left: 56px;
+  }
+}
