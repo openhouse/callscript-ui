@@ -1,0 +1,28 @@
+<div class="to-call">
+  <h6 class="grey-text">People to call</h6>
+  {{#md-collection as |c|}}
+    {{!--
+    {{c.link-to 'Senator Murkowski (D - AK)' 'place' (query-params selected="stef")}}
+    {{c.link-to 'Senator Sullivan (R - AK)' 'place' (query-params selected="tom")}}
+    --}}
+    {{#c.item}}
+      {{fa-icon "check" fixedWidth=true class="green-text text-lighten-2"}}
+      Rep. Young <span class="right blue-text text-lighten-2">D - AK02</span>
+    {{/c.item}}
+
+    {{#c.item class="active blue"}}
+      <span class="white-text" style="visibility: hidden;">
+        {{fa-icon "square-o" fixedWidth=true}}
+      </span>
+      Sen. Murkowski <span class="right white-text ">D - AK</span>
+    {{/c.item}}
+
+    {{#c.item}}
+      <span class="grey-text" style="visibility: hidden;">
+        {{fa-icon "square-o" fixedWidth=true}}
+      </span>
+      Sen. Sullivan <span class="right red-text text-lighten-2">R - AK</span>
+    {{/c.item}}
+  {{/md-collection}}
+</div>
+{{yield}}

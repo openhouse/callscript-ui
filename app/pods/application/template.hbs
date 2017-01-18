@@ -1,99 +1,22 @@
 {{#md-sidenav params=(hash menuWidth=300) classNames="fixed" as |sn|}}
   <li class="logo">
-    <a href="http://callnyc.org/" class="logo-container brand-logo">
-      <img src="assets/call-script-w20-1-114.png" class="front-page-logo"/>
-    </a>
+    {{#link-to 'place' classNames="logo-container brand-logo"}}
+      <img src="/assets/call-script-w20-1-114.png" class="front-page-logo"/>
+    {{/link-to}}
   </li>
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
-    Health Care
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
-    Immigration
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "close" class="red-text" size="lg" fixedWidth=true}}
-    Reproductive Rights
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
-    Civil Liberties / First Amendment
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "ellipsis-h" class="pastel-text pastel-gray" size="lg" fixedWidth=true}}
-    Marriage Equality
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Police Brutality / Criminal Justice
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Refugees
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Gun Violence Prevention
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Climate Changes
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Tell reps #NoBannon
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Take Rep. Paul Ryan's ACA Survey
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Call House Oversight Committee
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Dakota Access Pipeline Protestors Injured
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Conflict of Interest Investigation &amp; Russian Influence
-  {{/sn.link-to}}
-  {{#sn.link-to 'place'
-    (query-params a="1")
-    }}
-    {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-    Support Katherine Clark's bill
-  {{/sn.link-to}}
+  {{#each model as |script|}}
+    {{#sn.link-to 'script' script.id class=""}}
+      {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+      {{!--
+      {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+      {{fa-icon "close" class="red-text" size="lg" fixedWidth=true}}
+      {{fa-icon "ellipsis-h" class="pastel-text pastel-gray" size="lg" fixedWidth=true}}
+      {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+      --}}
+      {{script.title}}
+    {{/sn.link-to}}
+  {{/each}}
+
 
 
 
@@ -108,120 +31,36 @@
         Call Script
       {{/n.title}}
       <a data-activates={{n.sidenavId}} class="button-collapse hide-on-med-and-up">
-        {{!-- {{fa-icon "bars" size="lg"}} --}}
-
         <i class="material-icons">menu</i>
       </a>
 
       {{#n.menu class="right" as |m|}}
-        {{!--
-        {{m.link-to '11205 update' 'place' (query-params a="3") classNames='last-button'}}
-        --}}
-        {{m.link-to 'About' 'place' (query-params a="3") classNames='last-button'}}
+        {{#m.link-to 'about' classNames='last-button'}}
+          About
+        {{/m.link-to}}
       {{/n.menu}}
     </div>
     <div style="clear: both;">
     </div>
-    {{!--
-
-  --}}
     {{#n.sidenav params=(hash menuWidth=240) classNames="pop-out-nav" as |sn| }}
       <li class="logo pop">
-        <a href="http://callnyc.org/" class="logo-container brand-logo">
-          <img src="assets/call-script-w20-1-114.png" class="front-page-logo"/>
-        </a>
+        {{#link-to 'place' classNames="logo-container brand-logo"}}
+          <img src="/assets/call-script-w20-1-114.png" class="front-page-logo"/>
+        {{/link-to}}
       </li>
 
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
-        Health Care
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
-        Immigration
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "close" class="red-text" size="lg" fixedWidth=true}}
-        Reproductive Rights
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
-        Civil Liberties / First Amendment
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "ellipsis-h" class="pastel-text pastel-gray" size="lg" fixedWidth=true}}
-        Marriage Equality
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Police Brutality / Criminal Justice
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Refugees
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Gun Violence Prevention
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Climate Changes
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Tell reps #NoBannon
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Take Rep. Paul Ryan's ACA Survey
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Call House Oversight Committee
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Dakota Access Pipeline Protestors Injured
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Conflict of Interest Investigation &amp; Russian Influence
-      {{/sn.link-to}}
-      {{#sn.link-to 'place'
-        (query-params a="1")
-        }}
-        {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
-        Support Katherine Clark's bill
-      {{/sn.link-to}}
+      {{#each model as |script|}}
+        {{#sn.link-to 'script' script.id}}
+          {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+          {{!--
+          {{fa-icon "check" class="green-text" size="lg" fixedWidth=true}}
+          {{fa-icon "close" class="red-text" size="lg" fixedWidth=true}}
+          {{fa-icon "ellipsis-h" class="pastel-text pastel-gray" size="lg" fixedWidth=true}}
+          {{fa-icon "check" class="green-text" style="visibility: hidden;" size="lg" fixedWidth=true}}
+          --}}
+          {{script.title}}
+        {{/sn.link-to}}
+      {{/each}}
 
     {{/n.sidenav}}
 

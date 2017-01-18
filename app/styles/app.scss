@@ -31,8 +31,17 @@ $roboto-font-path: '../assets/';
 .main-nav {
   height: auto !important;
 
-  .last-button a {
-    padding-right: 0;
+  .last-button {
+    position: relative;
+    left: 15px;
+
+    &.active {
+      background-color: #ffffff;
+      a {
+        color: black;
+      }
+    }
+
   }
 }
 

@@ -5,8 +5,10 @@ const { Model, attr } = DS;
 export default Model.extend({
   // attributes
   title: attr('string'),
-  posiText: attr('string'),
-  negiText: attr('string'),
+  blueText: attr('string'),
+  redText: attr('string'),
+  sourceTitle: attr('string'),
+  sourceURL: attr('string'),
 
   dateCreated: attr('date'),
   viewCount: attr('number'),

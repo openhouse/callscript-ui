@@ -1,0 +1,41 @@
+<div class="container">
+  {{!--
+    <h4 class="center-align" style="padding-top: 16px; padding-bottom: 16px;">About</h4>
+  --}}
+  <header style="padding-top: 32px; padding-bottom: 16px;">
+    <h5 class="center-align">
+      Call your representatives.
+    </h5>
+    <h5 class="center-align">
+      Simply make change.
+    </h5>
+  </header>
+  <div class="center-align" style="padding-bottom: 16px;">
+    {{#link-to 'home'}}
+      {{md-btn label='Find a cause' class="green"}}
+    {{/link-to}}
+  </div>
+
+  <h5 class="center-align" style="padding-top: 32px;">
+    Submit a Script
+  </h5>
+  <p class="plain-font">
+    Give voice to the cause. Share scripts with us on Facebook, Twitter, and email.
+  </p>
+
+  <div class="center-align">
+    {{#md-btn class="blue"}}
+      {{fa-icon "facebook" fixedWidth=true}}
+    {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
+      {{fa-icon "twitter" fixedWidth=true}}
+    {{/md-btn}}&nbsp;<a href="mailto:contact@callscript.org">{{#md-btn class="blue"}}
+      {{fa-icon "envelope" fixedWidth=true}}
+    {{/md-btn}}</a>
+  </div>
+
+
+</div>
+
+{{outlet}}
+
+{{!-- Give voice to the cause. --}}

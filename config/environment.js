@@ -1,11 +1,12 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'callscript-ui',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'router-scroll',
+    historySupportMiddleware: true,
     podModulePrefix: 'callscript-ui/pods',
     EmberENV: {
       FEATURES: {

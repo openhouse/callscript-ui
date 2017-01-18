@@ -1,0 +1,53 @@
+{{cs-place}}
+<div class="container">
+  <div class="heading-nav">
+    <h6 class="left grey-text">The Cause</h6>
+  </div>
+
+
+
+
+  <div style="clear: both;" class="cause-nav">
+    {{#link-to 'place' class="left valign"}}
+      {{#md-btn class="white btn-flat btn-large"}}
+        {{fa-icon "chevron-left"}}
+      {{/md-btn}}
+    {{/link-to}}
+    {{#link-to 'place' class="right valign"}}
+      {{#md-btn class="white btn-flat btn-large"}}
+        {{fa-icon "chevron-right"}}
+      {{/md-btn}}
+    {{/link-to}}
+    <h4 class="center-align">{{model.title}}</h4>
+  </div>
+  {{call-list}}
+  {{call-script script=model.blueText}}
+
+  <br>
+  <br>
+
+  <div>
+    <h6 class="grey-text">Share this script, multiply your voice</h6>
+    <div class="center-align">
+      {{#md-btn class="blue"}}
+        {{fa-icon "facebook" fixedWidth=true}}
+      {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
+        {{fa-icon "twitter" fixedWidth=true}}
+      {{/md-btn}}&nbsp;{{#md-btn class="blue"}}
+        {{fa-icon "envelope" fixedWidth=true}}
+      {{/md-btn}}
+    </div>
+  </div>
+
+  <br>
+
+  {{#if model.sourceURL}}
+    <div>
+      <h6 class="grey-text">Source</h6>
+      <a target="_blank" class="plain-font" style="opacity: 0.85;" href="{{model.sourceURL}}">
+        {{model.sourceTitle}}
+      </a>
+    </div>
+  {{/if}}
+</div>
+<br>

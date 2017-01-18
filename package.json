@@ -56,6 +56,7 @@
     "ember-network": "0.3.0",
     "ember-oil-pastels": "git+https://github.com/openhouse/ember-oil-pastels.git#0ab4a4ddced958c8df6b8186868991ceae154712",
     "ember-resolver": "^2.0.3",
+    "ember-router-scroll": "0.0.6",
     "ember-suave": "4.0.1",
     "ember-truth-helpers": "1.2.0",
     "ember-welcome-page": "^1.0.3",
