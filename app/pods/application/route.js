@@ -3,6 +3,8 @@ const { Route, inject } = Ember;
 
 export default Route.extend({
   fastboot: inject.service(),
+  scriptList: inject.service(),
+
   model() {
     let shoebox = this.get('fastboot.shoebox');
     let shoeboxStore = shoebox.retrieve('my-store');
@@ -207,7 +209,7 @@ export default Route.extend({
         relationships: {}
       }]
     });
-
-    return this.store.peekAll('script');
+    this.set('scriptList.scripts', this.store.peekAll('script'));
+    return this.get('scriptList.scripts');
   }
 });

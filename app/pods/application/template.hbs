@@ -25,6 +25,7 @@
 <main class="main-content">
   <div id="sidenav-container"></div>
 
+
   {{#md-nav class='black main-nav' as |n|}}
     <div>
       {{#n.title 'place' classNames='doc-nav left--sm'}}
@@ -63,10 +64,7 @@
       {{/each}}
 
     {{/n.sidenav}}
-
-
   {{/md-nav}}
-
 
   {{outlet}}
 </main>
