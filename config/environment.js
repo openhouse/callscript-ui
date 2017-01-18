@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'callscript-ui',
-    environment,
+    environment: environment,
     rootURL: '/',
     locationType: 'router-scroll',
     historySupportMiddleware: true,
